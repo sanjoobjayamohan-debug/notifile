@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: notifile-node-api
+    runtime: node
+    plan: free
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.12.0
+      - key: NODE_ENV
+        value: production
+      - key: NOTIFILE_ALLOWED_ORIGIN_REGEX
+        value: '^https://.*\.vercel\.app$'
+      - key: FIREBASE_SERVICE_ACCOUNT_JSON
+        sync: false
+
+  - type: web
+    name: notifile-python-api
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    envVars:
+      - key: NOTIFILE_ALLOWED_ORIGIN_REGEX
+        value: '^https://.*\.vercel\.app$'

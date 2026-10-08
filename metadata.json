@@ -1,0 +1,6 @@
+{
+  "name": "Notifile",
+  "description": "All-in-one PDF, document, and image utility suite. Convert, compress, edit, organize, and protect files with speed and privacy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,158 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global Safety Net: Default deny everything
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    match /billingConfiguration/{configId} {
+      allow get: if configId == 'current';
+      allow list: if false;
+      allow create, update: if configId == 'current'
+        && request.auth != null
+        && request.auth.token.admin == true;
+      allow delete: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // Validation for UserProfile
+    function isValidUserProfile(data) {
+      return data.keys().hasAll(['uid', 'email', 'currentPlan', 'walletBalance', 'activitiesCount', 'createdAt'])
+        && data.keys().hasOnly(['uid', 'email', 'displayName', 'currentPlan', 'walletBalance', 'activitiesCount', 'timeoutStartedAt', 'updatedAt', 'createdAt'])
+        && data.uid is string && data.uid.size() <= 128 && data.uid == request.auth.uid
+        && data.email is string && data.email.size() <= 128
+        && (data.currentPlan in ['free_tier', 'wallet_recharge', 'unlimited_pass'])
+        && data.walletBalance is number && data.walletBalance >= 0
+        && data.activitiesCount is number && data.activitiesCount >= 0
+        && data.createdAt is string && data.createdAt.size() <= 64;
+    }
+
+    // Validation for UserActivity
+    function isValidUserActivity(data) {
+      return data.keys().hasAll(['id', 'userId', 'toolId', 'toolName', 'fileName', 'status', 'createdAt'])
+        && data.keys().hasOnly(['id', 'userId', 'toolId', 'toolName', 'fileName', 'originalSize', 'resultSize', 'chargedAmount', 'status', 'createdAt'])
+        && data.id is string && data.id.size() <= 128
+        && data.userId is string && data.userId == request.auth.uid
+        && data.toolId is string && data.toolId.size() <= 64
+        && data.toolName is string && data.toolName.size() <= 128
+        && data.fileName is string && data.fileName.size() <= 256
+        && (data.status in ['completed', 'failed', 'halted_quota_ended'])
+        && data.createdAt is string && data.createdAt.size() <= 64;
+    }
+
+    // Validation for WalletTransaction
+    function isValidWalletTransaction(data) {
+      return data.keys().hasAll(['id', 'userId', 'rechargeAmount', 'payableAmount', 'status', 'createdAt'])
+        && data.keys().hasOnly(['id', 'userId', 'rechargeAmount', 'discountAmount', 'payableAmount', 'upiId', 'status', 'createdAt'])
+        && data.id is string && data.id.size() <= 128
+        && data.userId is string && data.userId == request.auth.uid
+        && data.rechargeAmount is number && data.rechargeAmount >= 482
+        && data.payableAmount is number && data.payableAmount >= 0
+        && (data.status in ['confirmed', 'pending', 'failed'])
+        && data.createdAt is string && data.createdAt.size() <= 64;
+    }
+
+    // User Profile Collection
+    match /users/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      allow list: if false; // Users cannot list other user profiles
+
+      allow create: if isOwner(userId)
+        && isValidId(userId)
+        && isValidUserProfile(incoming());
+
+      allow update: if isOwner(userId)
+        && isValidId(userId)
+        && isValidUserProfile(incoming())
+        && incoming().uid == existing().uid
+        && incoming().createdAt == existing().createdAt;
+
+      allow delete: if false; // User accounts are retained or deleted through admin
+
+      // Subcollection: Activities
+      match /activities/{activityId} {
+        allow get: if isOwner(userId) && isValidId(activityId);
+        allow list: if isOwner(userId);
+
+        allow create: if isOwner(userId)
+          && isValidId(activityId)
+          && isValidUserActivity(incoming());
+
+        allow update: if false; // Activity logs are immutable write-once
+        allow delete: if isOwner(userId) && isValidId(activityId);
+      }
+
+      // Subcollection: Wallet Transactions
+      match /transactions/{transactionId} {
+        allow get: if isOwner(userId) && isValidId(transactionId);
+        allow list: if isOwner(userId);
+
+        allow create: if isOwner(userId)
+          && isValidId(transactionId)
+          && isValidWalletTransaction(incoming());
+
+        allow update: if isOwner(userId)
+          && isValidId(transactionId)
+          && isValidWalletTransaction(incoming())
+          && incoming().id == existing().id
+          && incoming().userId == existing().userId
+          && incoming().createdAt == existing().createdAt;
+
+        allow delete: if false; // Transactions must remain audit trail
+      }
+
+      match /billing/{billingId} {
+        allow get: if isOwner(userId) && billingId == 'state';
+        allow list: if false;
+        allow create: if false;
+        allow update: if isOwner(userId)
+          && billingId == 'state'
+          && incoming().creditBalance is number
+          && incoming().creditBalance >= 0
+          && incoming().creditBalance <= existing().creditBalance
+          && incoming().creditsUsed is number
+          && incoming().creditsUsed >= existing().creditsUsed
+          && incoming().creditsPurchased == existing().creditsPurchased
+          && incoming().lastPurchaseAt == existing().lastPurchaseAt
+          && incoming().teamSubscription == existing().teamSubscription;
+        allow delete: if false;
+      }
+
+      match /billingTransactions/{transactionId} {
+        allow get, list: if isOwner(userId);
+        allow create: if isOwner(userId)
+          && isValidId(transactionId)
+          && incoming().id == transactionId
+          && incoming().createdAt is number
+          && incoming().credits is number
+          && incoming().kind == 'usage'
+          && incoming().credits <= 0
+          && incoming().status in ['completed', 'failed']
+          && incoming().toolId is string;
+        allow update, delete: if false;
+      }
+    }
+  }
+}

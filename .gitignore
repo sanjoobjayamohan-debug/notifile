@@ -1,0 +1,12 @@
+node_modules/
+backend/.venv/
+backend/.venv-ai/
+__pycache__/
+.pytest_cache/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example

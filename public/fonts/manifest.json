@@ -1,0 +1,610 @@
+{
+  "version": 1,
+  "license": "See each font entry for its specific licence file.",
+  "fonts": [
+    {
+      "id": "roboto",
+      "family": "Roboto",
+      "file": "families/roboto.ttf",
+      "license": "licenses/roboto-OFL.txt",
+      "source": "ofl/roboto/Roboto[wdth,wght].ttf",
+      "bytes": 488584
+    },
+    {
+      "id": "opensans",
+      "family": "Open Sans",
+      "file": "families/opensans.ttf",
+      "license": "licenses/opensans-OFL.txt",
+      "source": "ofl/opensans/OpenSans[wdth,wght].ttf",
+      "bytes": 532636
+    },
+    {
+      "id": "lato",
+      "family": "Lato",
+      "file": "families/lato.ttf",
+      "license": "licenses/lato-OFL.txt",
+      "source": "ofl/lato/Lato-Regular.ttf",
+      "bytes": 656568
+    },
+    {
+      "id": "montserrat",
+      "family": "Montserrat",
+      "file": "families/montserrat.ttf",
+      "license": "licenses/montserrat-OFL.txt",
+      "source": "ofl/montserrat/Montserrat[wght].ttf",
+      "bytes": 744936
+    },
+    {
+      "id": "sourcesans3",
+      "family": "Source Sans 3",
+      "file": "families/sourcesans3.ttf",
+      "license": "licenses/sourcesans3-OFL.txt",
+      "source": "ofl/sourcesans3/SourceSans3[wght].ttf",
+      "bytes": 646340
+    },
+    {
+      "id": "firacode",
+      "family": "Fira Code",
+      "file": "families/firacode.ttf",
+      "license": "licenses/firacode-OFL.txt",
+      "source": "ofl/firacode/FiraCode[wght].ttf",
+      "bytes": 260364
+    },
+    {
+      "id": "merriweather",
+      "family": "Merriweather",
+      "file": "families/merriweather.ttf",
+      "license": "licenses/merriweather-OFL.txt",
+      "source": "ofl/merriweather/Merriweather[opsz,wdth,wght].ttf",
+      "bytes": 4628080
+    },
+    {
+      "id": "playfairdisplay",
+      "family": "Playfair Display",
+      "file": "families/playfairdisplay.ttf",
+      "license": "licenses/playfairdisplay-OFL.txt",
+      "source": "ofl/playfairdisplay/PlayfairDisplay[wght].ttf",
+      "bytes": 300724
+    },
+    {
+      "id": "poppins",
+      "family": "Poppins",
+      "file": "families/poppins.ttf",
+      "license": "licenses/poppins-OFL.txt",
+      "source": "ofl/poppins/Poppins-Regular.ttf",
+      "bytes": 160316
+    },
+    {
+      "id": "inter",
+      "family": "Inter",
+      "file": "families/inter.ttf",
+      "license": "licenses/inter-OFL.txt",
+      "source": "ofl/inter/Inter[opsz,wght].ttf",
+      "bytes": 876576
+    },
+    {
+      "id": "notosans",
+      "family": "Noto Sans",
+      "file": "families/notosans.ttf",
+      "license": "licenses/notosans-OFL.txt",
+      "source": "ofl/notosans/NotoSans[wdth,wght].ttf",
+      "bytes": 2049096
+    },
+    {
+      "id": "notoserif",
+      "family": "Noto Serif",
+      "file": "families/notoserif.ttf",
+      "license": "licenses/notoserif-OFL.txt",
+      "source": "ofl/notoserif/NotoSerif[wdth,wght].ttf",
+      "bytes": 1887192
+    },
+    {
+      "id": "nunito",
+      "family": "Nunito",
+      "file": "families/nunito.ttf",
+      "license": "licenses/nunito-OFL.txt",
+      "source": "ofl/nunito/Nunito[wght].ttf",
+      "bytes": 276932
+    },
+    {
+      "id": "raleway",
+      "family": "Raleway",
+      "file": "families/raleway.ttf",
+      "license": "licenses/raleway-OFL.txt",
+      "source": "ofl/raleway/Raleway[wght].ttf",
+      "bytes": 312352
+    },
+    {
+      "id": "oswald",
+      "family": "Oswald",
+      "file": "families/oswald.ttf",
+      "license": "licenses/oswald-OFL.txt",
+      "source": "ofl/oswald/Oswald[wght].ttf",
+      "bytes": 172088
+    },
+    {
+      "id": "worksans",
+      "family": "Work Sans",
+      "file": "families/worksans.ttf",
+      "license": "licenses/worksans-OFL.txt",
+      "source": "ofl/worksans/WorkSans[wght].ttf",
+      "bytes": 361072
+    },
+    {
+      "id": "dmsans",
+      "family": "DM Sans",
+      "file": "families/dmsans.ttf",
+      "license": "licenses/dmsans-OFL.txt",
+      "source": "ofl/dmsans/DMSans[opsz,wght].ttf",
+      "bytes": 240164
+    },
+    {
+      "id": "dmserifdisplay",
+      "family": "DM Serif Display",
+      "file": "families/dmserifdisplay.ttf",
+      "license": "licenses/dmserifdisplay-OFL.txt",
+      "source": "ofl/dmserifdisplay/DMSerifDisplay-Regular.ttf",
+      "bytes": 76580
+    },
+    {
+      "id": "ptsans",
+      "family": "PT Sans",
+      "file": "families/ptsans.ttf",
+      "license": "licenses/ptsans-OFL.txt",
+      "source": "ofl/ptsans/PT_Sans-Web-Regular.ttf",
+      "bytes": 442960
+    },
+    {
+      "id": "ptserif",
+      "family": "PT Serif",
+      "file": "families/ptserif.ttf",
+      "license": "licenses/ptserif-OFL.txt",
+      "source": "ofl/ptserif/PT_Serif-Web-Regular.ttf",
+      "bytes": 359048
+    },
+    {
+      "id": "librebaskerville",
+      "family": "Libre Baskerville",
+      "file": "families/librebaskerville.ttf",
+      "license": "licenses/librebaskerville-OFL.txt",
+      "source": "ofl/librebaskerville/LibreBaskerville[wght].ttf",
+      "bytes": 171900
+    },
+    {
+      "id": "lora",
+      "family": "Lora",
+      "file": "families/lora.ttf",
+      "license": "licenses/lora-OFL.txt",
+      "source": "ofl/lora/Lora[wght].ttf",
+      "bytes": 212196
+    },
+    {
+      "id": "manrope",
+      "family": "Manrope",
+      "file": "families/manrope.ttf",
+      "license": "licenses/manrope-OFL.txt",
+      "source": "ofl/manrope/Manrope[wght].ttf",
+      "bytes": 164700
+    },
+    {
+      "id": "mulish",
+      "family": "Mulish",
+      "file": "families/mulish.ttf",
+      "license": "licenses/mulish-OFL.txt",
+      "source": "ofl/mulish/Mulish[wght].ttf",
+      "bytes": 211988
+    },
+    {
+      "id": "quicksand",
+      "family": "Quicksand",
+      "file": "families/quicksand.ttf",
+      "license": "licenses/quicksand-OFL.txt",
+      "source": "ofl/quicksand/Quicksand[wght].ttf",
+      "bytes": 124824
+    },
+    {
+      "id": "rubik",
+      "family": "Rubik",
+      "file": "families/rubik.ttf",
+      "license": "licenses/rubik-OFL.txt",
+      "source": "ofl/rubik/Rubik[wght].ttf",
+      "bytes": 359804
+    },
+    {
+      "id": "cabin",
+      "family": "Cabin",
+      "file": "families/cabin.ttf",
+      "license": "licenses/cabin-OFL.txt",
+      "source": "ofl/cabin/Cabin[wdth,wght].ttf",
+      "bytes": 165468
+    },
+    {
+      "id": "karla",
+      "family": "Karla",
+      "file": "families/karla.ttf",
+      "license": "licenses/karla-OFL.txt",
+      "source": "ofl/karla/Karla[wght].ttf",
+      "bytes": 94016
+    },
+    {
+      "id": "bitter",
+      "family": "Bitter",
+      "file": "families/bitter.ttf",
+      "license": "licenses/bitter-OFL.txt",
+      "source": "ofl/bitter/Bitter[wght].ttf",
+      "bytes": 328636
+    },
+    {
+      "id": "crimsontext",
+      "family": "Crimson Text",
+      "file": "families/crimsontext.ttf",
+      "license": "licenses/crimsontext-OFL.txt",
+      "source": "ofl/crimsontext/CrimsonText-Regular.ttf",
+      "bytes": 107200
+    },
+    {
+      "id": "spacegrotesk",
+      "family": "Space Grotesk",
+      "file": "families/spacegrotesk.ttf",
+      "license": "licenses/spacegrotesk-OFL.txt",
+      "source": "ofl/spacegrotesk/SpaceGrotesk[wght].ttf",
+      "bytes": 136676
+    },
+    {
+      "id": "spacemono",
+      "family": "Space Mono",
+      "file": "families/spacemono.ttf",
+      "license": "licenses/spacemono-OFL.txt",
+      "source": "ofl/spacemono/SpaceMono-Regular.ttf",
+      "bytes": 99356
+    },
+    {
+      "id": "ibmplexsans",
+      "family": "IBM Plex Sans",
+      "file": "families/ibmplexsans.ttf",
+      "license": "licenses/ibmplexsans-OFL.txt",
+      "source": "ofl/ibmplexsans/IBMPlexSans[wdth,wght].ttf",
+      "bytes": 537244
+    },
+    {
+      "id": "ibmplexmono",
+      "family": "IBM Plex Mono",
+      "file": "families/ibmplexmono.ttf",
+      "license": "licenses/ibmplexmono-OFL.txt",
+      "source": "ofl/ibmplexmono/IBMPlexMono-Regular.ttf",
+      "bytes": 135580
+    },
+    {
+      "id": "jetbrainsmono",
+      "family": "JetBrains Mono",
+      "file": "families/jetbrainsmono.ttf",
+      "license": "licenses/jetbrainsmono-OFL.txt",
+      "source": "ofl/jetbrainsmono/JetBrainsMono[wght].ttf",
+      "bytes": 187208
+    },
+    {
+      "id": "inconsolata",
+      "family": "Inconsolata",
+      "file": "families/inconsolata.ttf",
+      "license": "licenses/inconsolata-OFL.txt",
+      "source": "ofl/inconsolata/static/Inconsolata-CondensedRegular.ttf",
+      "bytes": 105580
+    },
+    {
+      "id": "barlow",
+      "family": "Barlow",
+      "file": "families/barlow.ttf",
+      "license": "licenses/barlow-OFL.txt",
+      "source": "ofl/barlow/Barlow-Regular.ttf",
+      "bytes": 104068
+    },
+    {
+      "id": "archivo",
+      "family": "Archivo",
+      "file": "families/archivo.ttf",
+      "license": "licenses/archivo-OFL.txt",
+      "source": "ofl/archivo/Archivo[wdth,wght].ttf",
+      "bytes": 658596
+    },
+    {
+      "id": "assistant",
+      "family": "Assistant",
+      "file": "families/assistant.ttf",
+      "license": "licenses/assistant-OFL.txt",
+      "source": "ofl/assistant/Assistant[wght].ttf",
+      "bytes": 99496
+    },
+    {
+      "id": "arimo",
+      "family": "Arimo",
+      "file": "families/arimo.ttf",
+      "license": "licenses/arimo-OFL.txt",
+      "source": "ofl/arimo/Arimo[wght].ttf",
+      "bytes": 496268
+    },
+    {
+      "id": "asap",
+      "family": "Asap",
+      "file": "families/asap.ttf",
+      "license": "licenses/asap-OFL.txt",
+      "source": "ofl/asap/Asap[wdth,wght].ttf",
+      "bytes": 376764
+    },
+    {
+      "id": "alegreya",
+      "family": "Alegreya",
+      "file": "families/alegreya.ttf",
+      "license": "licenses/alegreya-OFL.txt",
+      "source": "ofl/alegreya/Alegreya[wght].ttf",
+      "bytes": 425288
+    },
+    {
+      "id": "anton",
+      "family": "Anton",
+      "file": "families/anton.ttf",
+      "license": "licenses/anton-OFL.txt",
+      "source": "ofl/anton/Anton-Regular.ttf",
+      "bytes": 170812
+    },
+    {
+      "id": "bebasneue",
+      "family": "Bebas Neue",
+      "file": "families/bebasneue.ttf",
+      "license": "licenses/bebasneue-OFL.txt",
+      "source": "ofl/bebasneue/BebasNeue-Regular.ttf",
+      "bytes": 61400
+    },
+    {
+      "id": "cormorantgaramond",
+      "family": "Cormorant Garamond",
+      "file": "families/cormorantgaramond.ttf",
+      "license": "licenses/cormorantgaramond-OFL.txt",
+      "source": "ofl/cormorantgaramond/CormorantGaramond[wght].ttf",
+      "bytes": 1195560
+    },
+    {
+      "id": "josefinsans",
+      "family": "Josefin Sans",
+      "file": "families/josefinsans.ttf",
+      "license": "licenses/josefinsans-OFL.txt",
+      "source": "ofl/josefinsans/JosefinSans[wght].ttf",
+      "bytes": 118588
+    },
+    {
+      "id": "librefranklin",
+      "family": "Libre Franklin",
+      "file": "families/librefranklin.ttf",
+      "license": "licenses/librefranklin-OFL.txt",
+      "source": "ofl/librefranklin/LibreFranklin[wght].ttf",
+      "bytes": 187436
+    },
+    {
+      "id": "sora",
+      "family": "Sora",
+      "file": "families/sora.ttf",
+      "license": "licenses/sora-OFL.txt",
+      "source": "ofl/sora/Sora[wght].ttf",
+      "bytes": 111400
+    },
+    {
+      "id": "urbanist",
+      "family": "Urbanist",
+      "file": "families/urbanist.ttf",
+      "license": "licenses/urbanist-OFL.txt",
+      "source": "ofl/urbanist/Urbanist[wght].ttf",
+      "bytes": 84840
+    },
+    {
+      "id": "exo2",
+      "family": "Exo 2",
+      "file": "families/exo2.ttf",
+      "license": "licenses/exo2-OFL.txt",
+      "source": "ofl/exo2/Exo2[wght].ttf",
+      "bytes": 303940
+    },
+    {
+      "id": "oxygen",
+      "family": "Oxygen",
+      "file": "families/oxygen.ttf",
+      "license": "licenses/oxygen-OFL.txt",
+      "source": "ofl/oxygen/Oxygen-Regular.ttf",
+      "bytes": 47988
+    },
+    {
+      "id": "prompt",
+      "family": "Prompt",
+      "file": "families/prompt.ttf",
+      "license": "licenses/prompt-OFL.txt",
+      "source": "ofl/prompt/Prompt-Regular.ttf",
+      "bytes": 168932
+    },
+    {
+      "id": "signika",
+      "family": "Signika",
+      "file": "families/signika.ttf",
+      "license": "licenses/signika-OFL.txt",
+      "source": "ofl/signika/Signika[GRAD,wght].ttf",
+      "bytes": 637392
+    },
+    {
+      "id": "titilliumweb",
+      "family": "Titillium Web",
+      "file": "families/titilliumweb.ttf",
+      "license": "licenses/titilliumweb-OFL.txt",
+      "source": "ofl/titilliumweb/TitilliumWeb-Regular.ttf",
+      "bytes": 63660
+    },
+    {
+      "id": "zillaslab",
+      "family": "Zilla Slab",
+      "file": "families/zillaslab.ttf",
+      "license": "licenses/zillaslab-OFL.txt",
+      "source": "ofl/zillaslab/ZillaSlab-Regular.ttf",
+      "bytes": 270104
+    },
+    {
+      "id": "firasans",
+      "family": "Fira Sans",
+      "file": "families/firasans.ttf",
+      "license": "licenses/firasans-OFL.txt",
+      "source": "ofl/firasans/FiraSans-Regular.ttf",
+      "bytes": 456996
+    },
+    {
+      "id": "varela",
+      "family": "Varela Round",
+      "file": "families/varela.ttf",
+      "license": "licenses/varela-OFL.txt",
+      "source": "ofl/varela/Varela-Regular.ttf",
+      "bytes": 188240
+    },
+    {
+      "id": "overpass",
+      "family": "Overpass",
+      "file": "families/overpass.ttf",
+      "license": "licenses/overpass-OFL.txt",
+      "source": "ofl/overpass/Overpass[wght].ttf",
+      "bytes": 318700
+    },
+    {
+      "id": "redhatdisplay",
+      "family": "Red Hat Display",
+      "file": "families/redhatdisplay.ttf",
+      "license": "licenses/redhatdisplay-OFL.txt",
+      "source": "ofl/redhatdisplay/RedHatDisplay[wght].ttf",
+      "bytes": 98360
+    },
+    {
+      "id": "redhatmono",
+      "family": "Red Hat Mono",
+      "file": "families/redhatmono.ttf",
+      "license": "licenses/redhatmono-OFL.txt",
+      "source": "ofl/redhatmono/RedHatMono[wght].ttf",
+      "bytes": 68356
+    },
+    {
+      "id": "epilogue",
+      "family": "Epilogue",
+      "file": "families/epilogue.ttf",
+      "license": "licenses/epilogue-OFL.txt",
+      "source": "ofl/epilogue/Epilogue[wght].ttf",
+      "bytes": 202996
+    },
+    {
+      "id": "sourceserif4",
+      "family": "Source Serif 4",
+      "file": "families/sourceserif4.ttf",
+      "license": "licenses/sourceserif4-OFL.txt",
+      "source": "ofl/sourceserif4/SourceSerif4[opsz,wght].ttf",
+      "bytes": 1209508
+    },
+    {
+      "id": "outfit",
+      "family": "Outfit",
+      "file": "families/outfit.ttf",
+      "license": "licenses/outfit-OFL.txt",
+      "source": "ofl/outfit/Outfit[wght].ttf",
+      "bytes": 110884
+    },
+    {
+      "id": "lexend",
+      "family": "Lexend",
+      "file": "families/lexend.ttf",
+      "license": "licenses/lexend-OFL.txt",
+      "source": "ofl/lexend/Lexend[wght].ttf",
+      "bytes": 175756
+    },
+    {
+      "id": "ibmplexserif",
+      "family": "IBM Plex Serif",
+      "file": "families/ibmplexserif.ttf",
+      "license": "licenses/ibmplexserif-OFL.txt",
+      "source": "ofl/ibmplexserif/IBMPlexSerif-Regular.ttf",
+      "bytes": 163068
+    },
+    {
+      "id": "dosis",
+      "family": "Dosis",
+      "file": "families/dosis.ttf",
+      "license": "licenses/dosis-OFL.txt",
+      "source": "ofl/dosis/Dosis[wght].ttf",
+      "bytes": 117280
+    },
+    {
+      "id": "nunitosans",
+      "family": "Nunito Sans",
+      "file": "families/nunitosans.ttf",
+      "license": "licenses/nunitosans-OFL.txt",
+      "source": "ofl/nunitosans/NunitoSans[YTLC,opsz,wdth,wght].ttf",
+      "bytes": 571240
+    },
+    {
+      "id": "figtree",
+      "family": "Figtree",
+      "file": "families/figtree.ttf",
+      "license": "licenses/figtree-OFL.txt",
+      "source": "ofl/figtree/Figtree[wght].ttf",
+      "bytes": 62712
+    },
+    {
+      "id": "barlowcondensed",
+      "family": "Barlow Condensed",
+      "file": "families/barlowcondensed.ttf",
+      "license": "licenses/barlowcondensed-OFL.txt",
+      "source": "ofl/barlowcondensed/BarlowCondensed-Regular.ttf",
+      "bytes": 102480
+    },
+    {
+      "id": "inriasans",
+      "family": "Inria Sans",
+      "file": "families/inriasans.ttf",
+      "license": "licenses/inriasans-OFL.txt",
+      "source": "ofl/inriasans/InriaSans-Regular.ttf",
+      "bytes": 83672
+    },
+    {
+      "id": "inriaserif",
+      "family": "Inria Serif",
+      "file": "families/inriaserif.ttf",
+      "license": "licenses/inriaserif-OFL.txt",
+      "source": "ofl/inriaserif/InriaSerif-Regular.ttf",
+      "bytes": 99808
+    },
+    {
+      "id": "publicsans",
+      "family": "Public Sans",
+      "file": "families/publicsans.ttf",
+      "license": "licenses/publicsans-OFL.txt",
+      "source": "ofl/publicsans/PublicSans[wght].ttf",
+      "bytes": 103316
+    },
+    {
+      "id": "ubuntu",
+      "family": "Ubuntu",
+      "file": "families/ubuntu.ttf",
+      "license": "licenses/ubuntu-UFL.txt",
+      "source": "ufl/ubuntu/Ubuntu-Regular.ttf"
+    },
+    {
+      "id": "cousine",
+      "family": "Cousine",
+      "file": "families/cousine.ttf",
+      "license": "licenses/cousine-OFL.txt",
+      "source": "ofl/cousine/Cousine-Regular.ttf"
+    },
+    {
+      "id": "carlito",
+      "family": "Carlito",
+      "file": "families/carlito.ttf",
+      "license": "licenses/carlito-OFL.txt",
+      "source": "ofl/carlito/Carlito-Regular.ttf"
+    },
+    {
+      "id": "caladea",
+      "family": "Caladea",
+      "file": "families/caladea.ttf",
+      "license": "licenses/caladea-OFL.txt",
+      "source": "ofl/caladea/Caladea-Regular.ttf"
+    }
+  ]
+}

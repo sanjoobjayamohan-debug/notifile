@@ -1,0 +1,232 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-weight: 500;
+  }
+
+  *, body, h1, h2, h3, h4, h5, h6, button, input, select, textarea {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .font-mono, .tabular-nums {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom smooth scroll and subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.4);
+}
+
+.pdf-inline-editor {
+  position: absolute;
+  z-index: 20;
+  width: max-content;
+  min-width: 2rem;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+  border: 1px solid rgb(37 99 235 / 75%);
+  border-radius: 2px;
+  outline: 2px solid rgb(37 99 235 / 15%);
+  background: rgb(255 255 255 / 96%);
+  box-shadow: 0 1px 4px rgb(15 23 42 / 12%);
+  padding-right: 2px;
+  padding-bottom: 1px;
+  cursor: text;
+}
+
+.pdf-editor-shell {
+  overflow: visible;
+  border: 1px solid rgb(229 229 229);
+  border-radius: 1rem;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgb(15 23 42 / 7%);
+}
+
+.pdf-editor-header,
+.pdf-editor-page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.pdf-editor-header {
+  margin-bottom: 1rem;
+}
+
+.pdf-editor-action,
+.pdf-editor-save,
+.pdf-editor-page-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border: 1px solid rgb(212 212 212);
+  border-radius: 0.65rem;
+  background: white;
+  padding: 0.55rem 0.8rem;
+  color: rgb(38 38 38);
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+
+.pdf-editor-save {
+  border-color: rgb(37 99 235);
+  background: rgb(37 99 235);
+  color: white;
+}
+
+.pdf-editor-action:disabled,
+.pdf-editor-save:disabled,
+.pdf-editor-page-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.pdf-editor-main {
+  min-width: 0;
+}
+
+.pdf-editor-page-heading {
+  margin: 0 auto 0.75rem;
+  max-width: 820px;
+  color: rgb(115 115 115);
+  font-size: 0.75rem;
+}
+
+.pdf-editor-page-button {
+  padding: 0.35rem;
+}
+
+.pdf-editor-canvas-wrap {
+  overflow: auto;
+  border-radius: 0.75rem;
+  background: rgb(245 245 245);
+  padding: clamp(0.5rem, 3vw, 1.5rem);
+}
+
+.pdf-editor-page {
+  position: relative;
+  width: 100%;
+  max-width: 820px;
+  overflow: hidden;
+  margin: auto;
+  border: 1px solid rgb(212 212 212);
+  background: white;
+  box-shadow: 0 8px 24px rgb(15 23 42 / 12%);
+}
+
+.pdf-editor-page.is-placing {
+  cursor: crosshair;
+}
+
+.pdf-text-target {
+  position: absolute;
+  z-index: 10;
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 0;
+  cursor: text;
+}
+
+.pdf-text-target:hover {
+  border-color: rgb(245 158 11 / 75%);
+  background: rgb(251 191 36 / 10%);
+}
+
+.pdf-text-target.is-selected {
+  border-color: rgb(37 99 235 / 85%);
+  background: rgb(96 165 250 / 9%);
+}
+
+.pdf-floating-toolbar {
+  position: absolute;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  max-width: calc(100% - 1rem);
+  border: 1px solid rgb(229 229 229);
+  border-radius: 0.75rem;
+  background: white;
+  padding: 0.4rem;
+  box-shadow: 0 8px 24px rgb(15 23 42 / 18%);
+}
+
+.pdf-toolbar-font,
+.pdf-toolbar-size {
+  height: 2rem;
+  min-width: 0;
+  border: 1px solid rgb(229 229 229);
+  border-radius: 0.45rem;
+  background: white;
+  padding: 0 0.4rem;
+  color: rgb(38 38 38);
+  font-size: 0.75rem;
+}
+
+.pdf-toolbar-font {
+  width: clamp(6rem, 22vw, 9rem);
+}
+
+.pdf-toolbar-size {
+  width: 3.5rem;
+}
+
+.pdf-toolbar-icon,
+.pdf-toolbar-color {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(229 229 229);
+  border-radius: 0.45rem;
+  background: white;
+  color: rgb(64 64 64);
+}
+
+.pdf-toolbar-icon.is-active {
+  border-color: rgb(37 99 235);
+  background: rgb(239 246 255);
+  color: rgb(29 78 216);
+}
+
+.pdf-toolbar-color {
+  padding: 0.2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .pdf-editor-shell {
+    padding: 0.75rem;
+  }
+
+  .pdf-editor-header {
+    flex-wrap: wrap;
+  }
+
+  .pdf-floating-toolbar {
+    gap: 0.2rem;
+    padding: 0.3rem;
+  }
+}

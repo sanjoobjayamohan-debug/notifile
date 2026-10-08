@@ -1,0 +1,78 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with plan entitlements, wallet balance, and free usage tracking",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "maxLength": 128 },
+        "displayName": { "type": "string", "maxLength": 128 },
+        "currentPlan": {
+          "type": "string",
+          "enum": ["free_tier", "wallet_recharge", "unlimited_pass"]
+        },
+        "walletBalance": { "type": "number" },
+        "activitiesCount": { "type": "number" },
+        "timeoutStartedAt": { "type": "number" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "currentPlan", "walletBalance", "activitiesCount", "createdAt"]
+    },
+    "UserActivity": {
+      "title": "UserActivity",
+      "description": "Log of PDF or document operations executed by the user",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "toolId": { "type": "string", "maxLength": 64 },
+        "toolName": { "type": "string", "maxLength": 128 },
+        "fileName": { "type": "string", "maxLength": 256 },
+        "originalSize": { "type": "number" },
+        "resultSize": { "type": "number" },
+        "chargedAmount": { "type": "number" },
+        "status": {
+          "type": "string",
+          "enum": ["completed", "failed", "halted_quota_ended"]
+        },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "toolId", "toolName", "fileName", "status", "createdAt"]
+    },
+    "WalletTransaction": {
+      "title": "WalletTransaction",
+      "description": "Record of a UPI / QR wallet recharge transaction",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "rechargeAmount": { "type": "number" },
+        "discountAmount": { "type": "number" },
+        "payableAmount": { "type": "number" },
+        "upiId": { "type": "string", "maxLength": 64 },
+        "status": {
+          "type": "string",
+          "enum": ["confirmed", "pending", "failed"]
+        },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "rechargeAmount", "payableAmount", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "User account documents with plan and wallet balance"
+    },
+    "/users/{userId}/activities/{activityId}": {
+      "schema": { "$ref": "#/entities/UserActivity" },
+      "description": "User execution log for document operations"
+    },
+    "/users/{userId}/transactions/{transactionId}": {
+      "schema": { "$ref": "#/entities/WalletTransaction" },
+      "description": "User wallet recharge transactions"
+    }
+  }
+}
